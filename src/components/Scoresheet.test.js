@@ -1,6 +1,8 @@
 import React from 'react';
-import { render } from 'react-testing-library';
+import { render, cleanup } from 'react-testing-library';
 import Scoresheet from './Scoresheet';
+
+afterEach(cleanup);
 
 const testUpperSection = Array(6).fill('UpperTest');
 
@@ -32,18 +34,22 @@ const testUiLabels = {
 const mockHandler = jest.fn();
 
 describe('<Scoresheet/>', () => {
-  const component = render(
-    <Scoresheet
-      players={testPlayers}
-      upperScores={testUpperScores}
-      lowerScores={testLowerScores}
-      scoreSums={testScoreSums}
-      upperSection={testUpperSection}
-      lowerSection={testLowerSection}
-      changeScoreValue={mockHandler}
-      uiLabels={testUiLabels}
-    />
-  );
+  let component;
+
+  beforeEach(() => {
+    component = render(
+      <Scoresheet
+        players={testPlayers}
+        upperScores={testUpperScores}
+        lowerScores={testLowerScores}
+        scoreSums={testScoreSums}
+        upperSection={testUpperSection}
+        lowerSection={testLowerSection}
+        changeScoreValue={mockHandler}
+        uiLabels={testUiLabels}
+      />
+    );
+  });
 
   test('renders upper score section texts', () => {
     const elements = component.getAllByText('UpperTest');
