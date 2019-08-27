@@ -44,7 +44,7 @@ const App = () => {
 
   const handleClearScores = () => {
     const updatedUpperScores = { ...upperScores };
-    Object.keys(updatedUpperScores).map(
+    Object.keys(updatedUpperScores).forEach(
       player =>
         (updatedUpperScores[player] = updatedUpperScores[player].map(
           score => ''
@@ -53,7 +53,7 @@ const App = () => {
     setUpperScores(updatedUpperScores);
 
     const updatedLowerScores = { ...lowerScores };
-    Object.keys(updatedLowerScores).map(
+    Object.keys(updatedLowerScores).forEach(
       player =>
         (updatedLowerScores[player] = updatedLowerScores[player].map(
           score => ''
