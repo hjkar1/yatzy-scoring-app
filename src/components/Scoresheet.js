@@ -49,8 +49,12 @@ const Scoresheet = ({
             <TableCell padding="dense" className={classes.tableHead}>
               <Icon style={{ marginLeft: '8px' }}>casino</Icon>
             </TableCell>
-            {players.map((player, i) => (
-              <TableCell key={i} padding="none" className={classes.tableHead}>
+            {players.map(player => (
+              <TableCell
+                key={player}
+                padding="none"
+                className={classes.tableHead}
+              >
                 {player}
               </TableCell>
             ))}
@@ -58,12 +62,12 @@ const Scoresheet = ({
         </TableHead>
         <TableBody>
           {upperSection.map((combination, index) => (
-            <TableRow key={index}>
+            <TableRow key={combination}>
               <TableCell component="th" scope="row" padding="dense">
                 {combination}
               </TableCell>
-              {Object.keys(upperScores).map((player, i) => (
-                <TableCell key={i} padding="none">
+              {Object.keys(upperScores).map(player => (
+                <TableCell key={player} padding="none">
                   <InputBase
                     name={player}
                     value={upperScores[player][index]}
@@ -84,8 +88,12 @@ const Scoresheet = ({
             >
               {SUM}
             </TableCell>
-            {Object.keys(scoreSums).map((player, i) => (
-              <TableCell key={i} padding="none" className={classes.sumCell}>
+            {Object.keys(scoreSums).map(player => (
+              <TableCell
+                key={player}
+                padding="none"
+                className={classes.sumCell}
+              >
                 {scoreSums[player].upperScoreSum}
               </TableCell>
             ))}
@@ -99,19 +107,23 @@ const Scoresheet = ({
             >
               Bonus
             </TableCell>
-            {Object.keys(scoreSums).map((player, i) => (
-              <TableCell key={i} padding="none" className={classes.sumCell}>
+            {Object.keys(scoreSums).map(player => (
+              <TableCell
+                key={player}
+                padding="none"
+                className={classes.sumCell}
+              >
                 {scoreSums[player].upperScoreSum > 62 ? 50 : 0}
               </TableCell>
             ))}
           </TableRow>
           {lowerSection.map((combination, index) => (
-            <TableRow key={index}>
+            <TableRow key={combination}>
               <TableCell component="th" scope="row" padding="dense">
                 {combination}
               </TableCell>
-              {Object.keys(lowerScores).map((player, i) => (
-                <TableCell key={i} padding="none">
+              {Object.keys(lowerScores).map(player => (
+                <TableCell key={player} padding="none">
                   <InputBase
                     name={player}
                     value={lowerScores[player][index]}
@@ -132,8 +144,12 @@ const Scoresheet = ({
             >
               {TOTAL_SUM}
             </TableCell>
-            {Object.keys(scoreSums).map((player, i) => (
-              <TableCell key={i} padding="none" className={classes.sumCell}>
+            {Object.keys(scoreSums).map(player => (
+              <TableCell
+                key={player}
+                padding="none"
+                className={classes.sumCell}
+              >
                 {scoreSums[player].upperScoreSum +
                   scoreSums[player].lowerScoreSum +
                   (scoreSums[player].upperScoreSum > 62 ? 50 : 0)}
