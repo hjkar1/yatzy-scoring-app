@@ -4,9 +4,26 @@ import Scoresheet from './Scoresheet';
 
 afterEach(cleanup);
 
-const testUpperSection = Array(6).fill('UpperTest');
+const testUpperSection = [
+  'Upper1',
+  'Upper2',
+  'Upper3',
+  'Upper4',
+  'Upper5',
+  'Upper6'
+];
 
-const testLowerSection = Array(9).fill('LowerTest');
+const testLowerSection = [
+  'Lower1',
+  'Lower2',
+  'Lower3',
+  'Lower4',
+  'Lower5',
+  'Lower6',
+  'Lower7',
+  'Lower8',
+  'Lower9'
+];
 
 const testPlayers = ['TestPlayer'];
 
@@ -52,12 +69,12 @@ describe('<Scoresheet/>', () => {
   });
 
   test('renders upper score section texts', () => {
-    const elements = component.getAllByText('UpperTest');
+    const elements = component.getAllByText('Upper', { exact: false });
     expect(elements).toHaveLength(6);
   });
 
   test('renders lower score section texts', () => {
-    const elements = component.getAllByText('LowerTest');
+    const elements = component.getAllByText('Lower', { exact: false });
     expect(elements).toHaveLength(9);
   });
 
