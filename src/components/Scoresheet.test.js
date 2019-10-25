@@ -1,8 +1,6 @@
 import React from 'react';
-import { render, cleanup } from 'react-testing-library';
+import { render } from '@testing-library/react';
 import Scoresheet from './Scoresheet';
-
-afterEach(cleanup);
 
 const testUpperSection = [
   'Upper1',
