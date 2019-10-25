@@ -13,7 +13,7 @@ import AddPlayerDialog from './AddPlayerDialog';
 
 const styles = theme => ({
   topBarContainer: {
-    marginBottom: theme.spacing.unit * 10
+    marginBottom: theme.spacing(10)
   },
   topBar: {
     backgroundColor: 'grey'
@@ -23,8 +23,8 @@ const styles = theme => ({
       display: 'none'
     },
     color: 'white',
-    marginLeft: theme.spacing.unit * 2,
-    marginRight: theme.spacing.unit * 2
+    marginLeft: theme.spacing(2),
+    marginRight: theme.spacing(2)
   },
   menuButton: {
     [theme.breakpoints.up('md')]: {
@@ -32,8 +32,8 @@ const styles = theme => ({
     }
   },
   appHeading: {
-    marginRight: theme.spacing.unit * 2,
-    marginLeft: theme.spacing.unit * 2
+    marginRight: theme.spacing(2),
+    marginLeft: theme.spacing(2)
   }
 });
 
