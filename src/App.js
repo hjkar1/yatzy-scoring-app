@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './App.css';
 import Scoresheet from './components/Scoresheet';
 import GameControls from './components/GameControls';
 import {
